@@ -455,7 +455,7 @@ namespace chrono {
                         >
                     >
                 >::type* = 0
-            ) : rep_(r) { }
+            ) : rep_(static_cast<Rep>(r)) { }
 #if  defined   BOOST_NO_CXX11_DEFAULTED_FUNCTIONS
         duration& operator=(const duration& rhs)
         {
