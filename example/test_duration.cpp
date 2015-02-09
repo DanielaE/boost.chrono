@@ -107,6 +107,7 @@ void f(duration<double> d, double res)  // accept floating point seconds
 {
     // d.count() == 3.e-6 when passed microseconds(3)
     BOOST_ASSERT(d.count()==res);
+	(void)d; (void)res;
 }
 
 void g(nanoseconds d, boost::intmax_t res)
@@ -125,6 +126,7 @@ void tmpl(duration<Rep, Period> d, boost::intmax_t res)
         ++ns;
     // ns.count() == 333333334 when passed 1/3 of a floating point second
     BOOST_ASSERT(ns.count()==res);
+	(void)res;
 }
 
 template <class Period>
@@ -136,6 +138,7 @@ void tmpl2(duration<long long, Period> d, boost::intmax_t res)
         ++ns;
     // ns.count() == 333333334 when passed 333333333333 picoseconds
     BOOST_ASSERT(ns.count()==res);
+	(void)res;
 }
 
 
