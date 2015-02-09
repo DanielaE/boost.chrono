@@ -15,6 +15,10 @@
 #include <boost/detail/lightweight_test.hpp>
 #include <cstdio>
 
+#ifdef BOOST_MSVC
+#pragma warning(disable: 4996)
+#endif
+
 int main()
 {
   using namespace boost;
