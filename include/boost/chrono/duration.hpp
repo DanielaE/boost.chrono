@@ -450,7 +450,7 @@ namespace chrono {
                         >
                     >
                 >::type* = 0
-            ) : rep_(r) { }
+            ) : rep_(static_cast<Rep>(r)) { }
         //~duration() {} //= default;
 //        BOOST_CONSTEXPR        duration(const duration& rhs) : rep_(rhs.rep_) {} // = default;
         duration& operator=(const duration& rhs) // = default;

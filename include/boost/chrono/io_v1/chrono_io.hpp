@@ -549,7 +549,7 @@ operator>>(std::basic_istream<CharT, Traits>& is, duration<Rep, Period>& d)
                 if (t > duration_values<common_type_t>::zero())
                 {
                   //std::cerr << __FILE__ << "[" << __LINE__ << "]"<< std::endl;
-                  Rep pt = t;
+                  Rep pt = static_cast<Rep>(t);
                   if ( (duration_values<Rep>::max)() < pt)
                   {
                     //std::cerr << __FILE__ << "[" << __LINE__ << "]"<< std::endl;

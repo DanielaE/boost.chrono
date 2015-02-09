@@ -309,7 +309,7 @@ namespace boost
         t /= den;
         if (t > duration_values<common_type_t>::zero())
         {
-          Rep pt = t;
+          Rep pt = static_cast<Rep>(t);
           if ( (duration_values<Rep>::max)() < pt)
           {
             // Conversion to Period overflowed
