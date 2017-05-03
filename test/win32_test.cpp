@@ -26,6 +26,7 @@ void test() {
     {
     boost::winapi::LARGE_INTEGER_ a;
     LARGE_INTEGER b;
+	(void)a; (void)b;
     BOOST_CHRONO_STATIC_ASSERT((
             sizeof(boost::winapi::LARGE_INTEGER_)==sizeof(LARGE_INTEGER)
         ), NOTHING, (boost::winapi::LARGE_INTEGER_, LARGE_INTEGER));
@@ -104,6 +105,7 @@ void test() {
 
         boost::winapi::FILETIME_ a;
         FILETIME b;
+		(void)a; (void)b;
         BOOST_TEST((
                 sizeof(a.dwLowDateTime)==sizeof(b.dwLowDateTime)
                 ));
