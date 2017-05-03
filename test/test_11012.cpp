@@ -15,7 +15,7 @@ int main()
 {
   {
     typedef boost::chrono::duration<float> RationalSeconds;
-    RationalSeconds d(0.5);
+    RationalSeconds d(0.5f);
     std::cout << d << std::endl;
   }
   {

@@ -12,7 +12,7 @@ template<typename D>
 void test_good(const char* str, D res)
 {
   std::istringstream in(str);
-  D d(0);
+  D d;
   in >> d;
   BOOST_TEST(in.eof());
   BOOST_TEST(!in.fail());
@@ -59,7 +59,7 @@ int main()
   test_good("5000 seconds", seconds(5000));
   test_fail("1.0 second", seconds(1));
 
-  test_good("1.0 second", duration<float,ratio<1> >(1));
+  test_good("1.0 second", duration<float,ratio<1> >(1.0f));
   /* BUG with DURATION_GET
 ../../../boost/math/common_factor_rt.hpp: In function 'RingType boost::math::detail::gcd_euclidean(RingType, RingType) [with RingType = long double]':
 ../../../boost/math/common_factor_rt.hpp:122:   instantiated from 'IntegerType boost::math::detail::gcd_integer(const IntegerType&, const IntegerType&) [with IntegerType = long double]'

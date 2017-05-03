@@ -38,9 +38,6 @@ using namespace boost::chrono;
 #pragma warning(disable:4100)
 #endif
 void manipulate_clock_object(system_clock clock)
-#if defined _MSC_VER
-#pragma warning(pop)
-#endif
 {
     system_clock::duration delay = milliseconds(5);
     system_clock::time_point start = clock.now();
@@ -51,6 +48,9 @@ void manipulate_clock_object(system_clock clock)
     system_clock::duration elapsed = stop - start;
     std::cout << "paused " << nanoseconds(elapsed).count() << " nanoseconds\n";
 }
+#if defined _MSC_VER
+#pragma warning(pop)
+#endif
 
 
 int main()
